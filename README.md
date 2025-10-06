@@ -45,3 +45,41 @@ install.packages("remotes")
 
 # Install modselrLOS from GitHub
 remotes::install_github("yire-shin/select-rLOS")
+```
+
+
+## Getting Started
+
+Before using the main functions, load the required packages:
+
+```r
+library(lmomco)
+library(eva)
+library(Rsolnp)
+library(modselrLOS)
+```
+
+### Main Program 1: sel.rmod.surv
+
+The Survival algorithm selects the best model first, then determines an appropriate r for that model.
+This approach focuses on model-based stability, meaning it chooses the most suitable distribution family first and then optimizes the number of order statistics r.
+
+```r
+data(pohang)
+sel.rmod.surv(pohang)
+```
+
+### Main Program 2: sel.rmod.rmed
+
+The r_median algorithm determines an appropriate r first, then selects the best model for that fixed r.
+This approach emphasizes data-driven selection, where the stability and information content of r are determined before fitting multiple models.
+
+```r
+data(pohang)
+sel.rmod.rmed(pohang)
+```
+
+
+## Additional Information
+
+please refer to the supplementary document README_modsel.pdf
