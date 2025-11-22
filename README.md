@@ -37,16 +37,20 @@ The pool of candidate models for rLOS includes:
 
 ## Installation
 
-To install the latest **development version** from GitHub, use:
+You can install the modselrLOS package by manually downloading the source file (.tar.gz) from GitHub.
+
+Download the file below from the GitHub repository:
+modselrLOS_0.0.0.9000.tar.gz
+
+In R or RStudio, run the following command:
 
 ```r
-# Install the {remotes} package if not already installed
-install.packages("remotes")
-
-# Install modselrLOS from GitHub
-remotes::install_github("yire-shin/select-rLOS")
+install.packages("C:/path_to_file/modselrLOS_0.0.0.9000.tar.gz",
+                 repos = NULL,
+                 type = "source")
 ```
 
+※ Replace "C:/path_to_file/" with the actual directory where the file was saved.
 
 ## Getting Started
 
