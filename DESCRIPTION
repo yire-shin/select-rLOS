@@ -1,0 +1,18 @@
+Package: modselrLOS
+Title: Model selection for r-largest order statistics
+Version: 0.0.0.9000
+Authors@R: 
+    c(person("Yire", "Shin", "","shinyire87@gmail.com", role = c("aut", "cre")),
+      person("Jeong-soo", "Park", "","jsparkstat@gmail.com", role = c("aut", "ctb")))
+Description: Two algorithms to select a good r-largest order statistics (rLOS) model with an appropriate r are implemented. The first one is the algorithm Survival. The second is the algorithm r median. The first algorithm selects the best model first, then determines an appropriate r for the fixed model. The second algorithm determines an appropriate r, then selects the best model for the fixed r. The pool of models for rLOS are rK4D, rK3D, rGEV, rGLO, rLD, rGGD, and rGD. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports: eva, graphics, lmomco, methods, numDeriv, Rsolnp, stats
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Author: Yire Shin [aut, cre],
+  Jeong-soo Park [aut, ctb]
+Maintainer: Yire Shin <shinyire87@gmail.com>
+Built: R 4.5.1; ; 2025-09-25 05:38:51 UTC; windows
