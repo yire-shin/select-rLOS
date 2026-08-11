@@ -27,15 +27,21 @@ head(pohang)
 
 ## Usage
 
+### Example: Pohang rainfall data
+
 `ms.rlos()` runs the complete model-selection procedure.
 
 ```r
+data(pohang)
+
 fit <- ms.rlos(
-  xdat,
+  xdat = pohang,
   sig.ed = 0.1,
   dmin = 0.03,
   numh = 8
 )
+
+fit
 ```
 
 | Argument | Description |
@@ -45,14 +51,6 @@ fit <- ms.rlos(
 | `dmin` | Minimum distance used when constructing candidate rK3D models |
 | `numh` | Number of candidate `h` values generated for the rK3D models |
 
-### Example: Pohang rainfall data
-
-```r
-data(pohang)
-
-fit <- ms.rlos(pohang)
-fit
-```
 
 ## Candidate models
 
@@ -95,8 +93,6 @@ fit$surv$theta
 ```
 
 The exact returned components vary slightly among the four procedures.
-
-## References
 
 ## References
 
