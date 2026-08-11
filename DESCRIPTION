@@ -1,0 +1,28 @@
+Package: msrlos
+Type: Package
+Title: Model Selection for r-Largest Order Statistics
+Version: 0.1.0
+Authors@R: c(
+    person("Yire", "Shin", role = "aut"),
+    person("Jihong", "Park", role = "aut"),
+    person("Jeong-Soo", "Park", email = "jspark@jnu.ac.kr", role = c("aut", "cre"))
+    )
+Description: Provides model-selection procedures for the r-largest order
+    statistics approach in extreme-value analysis. The main function ms.rlos()
+    jointly considers the probability model and the order r using
+    entropy-difference procedures and AIC comparisons. Candidate models include
+    generalized logistic, generalized Gumbel, generalized extreme value,
+    four-parameter kappa, logistic, Gumbel, and fixed-h three-parameter kappa
+    models.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.1.0)
+Imports:
+    eva,
+    lmomco,
+    numDeriv,
+    Rsolnp,
+    stats
+URL: https://github.com/yire-shin/select-rLOS
+BugReports: https://github.com/yire-shin/select-rLOS/issues

@@ -1,0 +1,25 @@
+citHeader("To cite msrlos, use:")
+
+bibentry(
+  bibtype = "Manual",
+  title = "msrlos: Model Selection for r-Largest Order Statistics",
+  author = c(
+    person("Yire", "Shin"),
+    person("Jihong", "Park"),
+    person("Jeong-Soo", "Park", email = "jspark@jnu.ac.kr")
+  ),
+  year = "2026",
+  note = "R package, version 0.1.0"
+)
+
+bibentry(
+  bibtype = "Unpublished",
+  title = "Automatic model selection in the r largest order statistics approach",
+  author = c(
+    person("Yire", "Shin"),
+    person("Jihong", "Park"),
+    person("Jeong-Soo", "Park")
+  ),
+  year = "2026",
+  note = "Unpublished manuscript"
+)
