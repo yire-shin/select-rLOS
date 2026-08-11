@@ -40,6 +40,32 @@ fit <- ms.rlos(pohang)
 fit
 ```
 
+### Results
+
+```r
+fit$surv
+fit$rmed
+fit$alt.surv
+fit$alt.rmed
+```
+
+- `surv`: Survival algorithm
+- `rmed`: r-Median algorithm
+- `alt.surv`: alternating algorithm initialized by Survival
+- `alt.rmed`: alternating algorithm initialized by r-Median
+
+
+### Candidate models
+
+- `rGLO`: generalized logistic
+- `rGGD`: generalized Gumbel
+- `rGEV`: generalized extreme value
+- `rK4D`: four-parameter kappa
+- `rLD`: logistic
+- `rGD`: Gumbel
+- `rK3D`: three-parameter kappa with fixed `h`
+
+
 ### General usage
 
 ```r
@@ -56,29 +82,7 @@ fit <- ms.rlos(
 - `dmin`: minimum spacing for fixed-`h` rK3D candidates
 - `numh`: number of initial candidate `h` values
 
-## Candidate models
 
-- `rGLO`: generalized logistic
-- `rGGD`: generalized Gumbel
-- `rGEV`: generalized extreme value
-- `rK4D`: four-parameter kappa
-- `rLD`: logistic
-- `rGD`: Gumbel
-- `rK3D`: three-parameter kappa with fixed `h`
-
-## Results
-
-```r
-fit$surv
-fit$rmed
-fit$alt.surv
-fit$alt.rmed
-```
-
-- `surv`: Survival algorithm
-- `rmed`: r-Median algorithm
-- `alt.surv`: alternating algorithm initialized by Survival
-- `alt.rmed`: alternating algorithm initialized by r-Median
 
 ## References
 
