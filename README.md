@@ -4,7 +4,7 @@
 
 `msrlos` provides automatic model-selection procedures for jointly selecting a probability model and the number of order statistics, `r`, in the r largest order statistics (rLOS) approach.
 
-## Installation
+### Installation
 
 ```r
 # install.packages("remotes")
@@ -12,7 +12,7 @@ remotes::install_github("yire-shin/select-rLOS")
 library(msrlos)
 ```
 
-## Input data
+### Input data
 
 `xdat` should be a numeric matrix or data frame of the r largest order statistics. Each row represents an independent block, typically one year, and the columns contain the order statistics in decreasing order. Thus, the first column contains the block maxima, the second column contains the second-largest observations, and so on.
 
@@ -25,9 +25,9 @@ dim(pohang)
 head(pohang)
 ```
 
-## Usage
+### Usage
 
-### Example: Pohang rainfall data
+#### Example: Pohang rainfall data
 
 `ms.rlos()` runs the complete model-selection procedure.
 
@@ -52,7 +52,7 @@ fit
 | `numh` | Number of candidate `h` values generated for the rK3D models |
 
 
-## Candidate models
+### Candidate models
 
 `msrlos` considers the following probability models for the r largest order statistics:
 
@@ -68,7 +68,7 @@ fit
 
 The candidate `h` values for the rK3D models are generated automatically from the fitted rK4D model.
 
-## Results
+### Results
 
 `ms.rlos()` returns the results from four model-selection procedures:
 
@@ -94,7 +94,7 @@ fit$surv$theta
 
 The exact returned components vary slightly among the four procedures.
 
-## References
+### References
 
 - Bader, B., Yan, J., and Zhang, X. (2017). Automated selection of r for the r largest order statistics approach with adjustment for sequential testing. *Statistics and Computing*, 27, 1435–1451.
 - Coles, S. (2001). An Introduction to Statistical Modeling of Extreme Values. Springer, London.
