@@ -14,11 +14,11 @@ library(msrlos)
 
 ## Input data
 
-`xdat` should be a numeric matrix in which rows represent independent blocks and columns contain order statistics in decreasing order:
+`xdat` should be a numeric matrix of the r largest order statistics. 
+Each row represents an independent block, and the columns contain the order statistics in decreasing order:
 
 ```text
 x(1) >= x(2) >= ... >= x(R)
-```
 
 The package includes the `pohang` dataset, containing the 10 largest daily precipitation observations by year for Pohang, Korea, from 1949 to 2022.
 
@@ -31,6 +31,9 @@ head(pohang)
 ## Usage
 
 ### Example: Pohang rainfall data
+
+The package includes the `pohang` dataset, consisting of annual r-largest
+daily precipitation observations from Pohang, Korea.
 
 ```r
 library(msrlos)
@@ -49,21 +52,24 @@ fit$alt.surv
 fit$alt.rmed
 ```
 
-- `surv`: Survival algorithm
-- `rmed`: r-Median algorithm
-- `alt.surv`: alternating algorithm initialized by Survival
-- `alt.rmed`: alternating algorithm initialized by r-Median
+- `surv`: result from the Survival algorithm, which selects the probability model first and then determines r.
+- `rmed`: result from the r-Median algorithm, which first determines a common value of r and then selects the probability model.
+- `alt.surv`: result from the alternating procedure initialized with the Survival solution.
+- `alt.rmed`: result from the alternating procedure initialized with the r-Median solution.
 
 
 ### Candidate models
 
-- `rGLO`: generalized logistic
-- `rGGD`: generalized Gumbel
-- `rGEV`: generalized extreme value
-- `rK4D`: four-parameter kappa
-- `rLD`: logistic
-- `rGD`: Gumbel
-- `rK3D`: three-parameter kappa with fixed `h`
+The `msrlos` package considers the following probability models for the 
+r largest order statistics (rLOS):
+
+- `rGLO`: generalized logistic distribution
+- `rGGD`: generalized Gumbel distribution
+- `rGEV`: generalized extreme value distribution
+- `rK4D`: four-parameter kappa distribution
+- `rLD`: logistic distribution
+- `rGD`: Gumbel distribution
+- `rK3D`: three-parameter kappa distribution with fixed `h`
 
 
 ### General usage
@@ -77,10 +83,10 @@ fit <- ms.rlos(
 )
 ```
 
-- `xdat`: matrix of r-largest order statistics
-- `sig.ed`: significance level for ED-based selection
-- `dmin`: minimum spacing for fixed-`h` rK3D candidates
-- `numh`: number of initial candidate `h` values
+- `xdat`: matrix of the r largest order statistics
+- `sig.ed`: significance level for the entropy difference (ED) test
+- `dmin`: minimum distance used when constructing candidate rK3D models
+- `numh`: number of candidate `h` values generated for the rK3D models
 
 
 
